@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangoon VPN - Internet Freedom for Myanmar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: #00bfff;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #00bfff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #bbbbbb;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup a {
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .close-btn {
+            margin-top: 10px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+        }
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById(id).style.display = "block";
+        }
+        function closePopup(id) {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #32cd32;">Rangoon VPN</h1>
+        <p>Bypass internet censorship in Myanmar with secure and private connections.</p>
+        <p>Powered by <a href="https://github.com/XTLS/Xray-core">Xray</a>, <a href="https://github.com/hiddify/Hiddify-Manager">Hiddify-Manager</a>, <a href="https://github.com/v2fly/v2ray-core">v2ray-core</a></p>
+        <p><strong>Why?</strong></p>
+        <p>Traditional VPNs and common protocols like IKEv2, WireGuard, and OpenVPN are ineffective due to Myanmar military regime's recent use of advanced traffic analysis systems similar to China's Great Firewall.</p>
+        <button class="button" onclick="showPopup('accessPopup')">Circumvent Now</button>
+        <button class="button" onclick="showPopup('donatePopup')">Donate</button>
+        <button class="button" onclick="showPopup('termsPopup')">Terms of Service</button>
+        
+        <div id="overlay" class="overlay" onclick="closePopup('accessPopup'); closePopup('donatePopup'); closePopup('termsPopup');"></div>
+        
+        <div id="accessPopup" class="popup">
+            <p>Access to Rangoon VPN will only be manually granted temporarily to prevent abuse and manage server costs.</p>
+            <p>For access, please contact on Telegram: <a href="https://t.me/rangoonvpn" target="_blank">@rangoonvpn</a></p>
+            <button class="close-btn" onclick="closePopup('accessPopup')">Close</button>
+        </div>
+        
+        <div id="donatePopup" class="popup">
+            <p>This project is run by a college student for free, and keeping the servers up can get pretty pricey(really pricey).</p>
+            <p>If you find this project useful or impactful, please consider donating to help keep the service running.</p>
+            <p>btc: bc1qdg9aratzjqvypzrcsx6ryhdu6lxhz2ulv9q5nt</p> 
+            <p>ltc: LZ7sNw6ALaPYtGRFwK5RTgwS6rjo2nxALZ</p>  
+            <p>trx: TThoZdoneGy4FKYx5PNhAxEX5cyjpJbrUH</p>
+            <p>sol: 8pVjxz4xyStEtfTFhs1gG7TZtTgwqm4U7sqAajXjvL3M</p>
+            <button class="close-btn" onclick="closePopup('donatePopup')">Close</button>
+        </div>
+        
+        <div id="termsPopup" class="popup">
+            <p><strong>Terms of Service</strong></p>
+            <p>This is not a professional service. I reserve the right to terminate access at any time if abuse is found.</p>
+            <p>Unlike traditional VPNs, Rangoon VPN exists solely to circumvent Myanmar's military regime's internet censorship.</p>
+            <p>Any illegal activities that violate US or Singaporean laws, including but not limited to DMCA violations, will be reported to the authorities.</p>
+            <button class="close-btn" onclick="closePopup('termsPopup')">Close</button>
+        </div>
+        
+        <p class="footer">Made with solidarity by <a href="https://nyan.gg">Nyan</a></p>
+    </div>
+</body>
+</html>
